@@ -1,59 +1,74 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/react';
+import "./globals.css";
+import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
-
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Google Cloud Study Jams 25-26 | GDGC MLRIT",
-  description: "Live leaderboard for Google Cloud Study Jams 2025-26. Track skill badges, arcade games, and participant progress at MLR Institute of Technology.",
-  keywords: ["Google Cloud", "Study Jams", "GCCP", "GDGC MLRIT", "Leaderboard", "Cloud Skills"],
-  authors: [{ name: "GDGC MLRIT" }],
-  creator: "GDGC MLRIT",
-  publisher: "GDGC MLRIT",
+  // --- Core ---
+  title: "Google Cloud Study Jams 2025–26 | GDGC NIT Goa",
+  description:
+    "Live leaderboard for Google Cloud Study Jams 2025–26 at NIT Goa. Track skill badges, arcade games, and participant progress.",
+  keywords: [
+    "Google Cloud",
+    "Study Jams",
+    "GCCP",
+    "GDGC NIT Goa",
+    "NIT Goa",
+    "Leaderboard",
+    "Cloud Skills",
+  ],
+  authors: [{ name: "GDGC NIT Goa" }],
+  creator: "GDGC NIT Goa",
+  publisher: "GDGC NIT Goa",
   robots: "index,follow",
-  
-  // Open Graph metadata for social sharing
+  metadataBase: new URL("https://cloud-jam-leaderboard-1114088229.asia-south1.run.app"),
+
+  // --- Icons (handled by Next metadata) ---
+  icons: {
+    icon: "/favicon.ico",
+    // apple: "/apple-touch-icon.png", // (optional) add if you have one
+  },
+
+  // --- Open Graph ---
   openGraph: {
-    title: "Google Cloud Study Jams 25-26 | GDGC MLRIT",
-    description: "Live leaderboard for Google Cloud Study Jams 2025-26. Track skill badges, arcade games, and participant progress.",
-    url: "https://cloud-jam-leaderboard-1114088229.asia-south1.run.app",
-    siteName: "Cloud Jam MLRIT Leaderboard",
+    title: "Google Cloud Study Jams 2025–26 | GDGC NIT Goa",
+    description:
+      "Live leaderboard for Google Cloud Study Jams 2025–26 at NIT Goa. Track skill badges, arcade games, and participant progress.",
+    url: "/",
+    siteName: "NIT Goa Cloud Jam Leaderboard",
     images: [
       {
-        url: "https://raw.githubusercontent.com/fenilmodi00/GCCP-Jams/main/public/assets/Screenshot%202023-09-12%20191408.png",
+        // Put your banner at: public/assets/nitgoa-og.png (1200×630 recommended)
+        url: "/assets/nitgoa-og.png",
         width: 1200,
         height: 630,
-        alt: "Google Cloud Study Jams Leaderboard",
+        alt: "NIT Goa Cloud Jam Leaderboard",
       },
     ],
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
   },
-  
-  // Twitter Card metadata
+
+  // --- Twitter Card ---
   twitter: {
     card: "summary_large_image",
-    title: "Google Cloud Study Jams 25-26 | GDGC MLRIT",
-    description: "Live leaderboard for Google Cloud Study Jams 2025-26. Track skill badges, arcade games, and participant progress.",
-    images: ["https://raw.githubusercontent.com/fenilmodi00/GCCP-Jams/main/public/assets/Screenshot%202023-09-12%20191408.png"],
-    creator: "@gdgcMLRIT",
+    title: "Google Cloud Study Jams 2025–26 | GDGC NIT Goa",
+    description:
+      "Live leaderboard for Google Cloud Study Jams 2025–26 at NIT Goa. Track skill badges, arcade games, and participant progress.",
+    images: ["/assets/nitgoa-og.png"],
+    // creator: "@your_handle_here", // optional—set if you have a Twitter/X handle
   },
-}
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <link rel="icon" href="/favicon.ico" />
-      <head>
-        
-      </head>
+      <head />
       <body className={inter.className}>
         {children}
         <Analytics />
-        
       </body>
     </html>
-  )
+  );
 }

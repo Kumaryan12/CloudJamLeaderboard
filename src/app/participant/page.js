@@ -97,7 +97,7 @@ export default function ParticipantDetail() {
             </div>
             <div className="text flex flex-col justify-start items-start">
               <p className="text-base">Google Developer Group On Campus</p>
-              <p className="text-xs"> MLR Institute of Technology</p>
+              <p className="text-xs"> NIT GOA</p>
             </div>
           </div>
           <div className="links mob:py-3">
